@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Makeup Homework 1", "Makeup Homework 1\Makeup Homework 1.csproj", "{52FA911C-C309-468B-905A-6EB8813626CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52FA911C-C309-468B-905A-6EB8813626CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52FA911C-C309-468B-905A-6EB8813626CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52FA911C-C309-468B-905A-6EB8813626CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52FA911C-C309-468B-905A-6EB8813626CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7CDD52AB-7933-477F-A1F4-83829087F350}
+	EndGlobalSection
+EndGlobal
