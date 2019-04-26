@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
 
 namespace Makeup_Homework_1
 {
@@ -27,8 +29,45 @@ namespace Makeup_Homework_1
 
         private void BtnGenerate_Click(object sender, RoutedEventArgs e)
         {
+            using (HttpClient client = new HttpClient())
 
-        }
+            {
+
+                var breed = client.GetAsync($@"https://dog.ceo/api/breed/{txtBreed.Text}/images/random").Result;
+
+                if (breed.IsSuccessStatusCode)
+
+                {
+
+                    var dog = breed.Content.ReadAsStringAsync().Result;
+
+                    KillMe dogType = JsonConvert.DeserializeObject<KillMe>(dog);
+
+                    BitmapImage dogPic = new BitmapImage();
+
+
+
+                    dogPic.BeginInit();
+
+                    dogPic.UriSource = new Uri(dogType.Message);
+
+                    dogPic.EndInit();
+
+                    imgPuppyPic.Source = dogPic;
+
+                }
+
+                else if (!breed.IsSuccessStatusCode)
+
+                {
+
+                    MessageBox.Show("Please insert another breed name");
+
+                    txtBreed.Clear();
+
+                }
+
+            }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
